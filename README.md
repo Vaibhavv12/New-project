@@ -1,1 +1,1 @@
-# new-project
+This project is for ACM hackathon.
