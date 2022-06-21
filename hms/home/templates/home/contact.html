@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block body %}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<form style="position: relative;" method="GET" action="">
+    <img src="https://images.unsplash.com/photo-1417632993443-302f4897cf67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NXwxMDg5NjQzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="1250" height="650"  />
+    <div style="position: absolute; left: 20px; top: 25px;"> 
+       {% comment %} <input type="text" placeholder="Texte..." /> <br><br>
+       <input type="text" placeholder="Texte..."/> <br><br>
+       <button type="submit">Go</button> {% endcomment %}
+       <div class="container mb-3 py-4">
+        <h1 class="text-center">Contact us</h1>
+        <form method="post" action="/contact">
+        {% csrf_token %}
+           <div class="form-group">
+               <label for="name">Name</label>
+               <input type="text" class="form-control" id="name" name="name" placeholder="Tanuj Joshi">
+             </div>
+   
+   
+   
+   
+           <div class="form-group">
+             <label for="email">Email adress</label>
+             <input type="email" class="form-control" id="email" name="email" placeholder="tanuj123@gmail.com">
+           </div>
+   
+   
+   
+   
+   
+   
+           <div class="form-group">
+               <label for="phone">Phone</label>
+               <input type="phone" class="form-control" id="phone" name="phone" placeholder="92847*****">
+             </div>
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+           <div class="form-group">
+             <label for="exampleFormControlTextarea1">Tell me what you want to contact me for.....</label>
+             <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+           </div>
+           <button class="btn btn-primary" type="submit">Submit</button>
+         </form>
+         </div>
+   
+   
+   </div> 
+    </div>
+</form>
+</body>
+</html>
+
+
+{% endblock body %}
+
