@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/home/about">About Management</a>
@@ -37,16 +37,8 @@
          <li class="nav-item active">
           <a class="nav-link" href="/home/contact">Contact Details</a>
         </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Login
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/home/stulogin">Student Login</a>
-            <a class="dropdown-item" href="/home/admlogin">Admin Login</a>
-
-          </div>
+        <li class="nav-item active">
+          <a class="nav-link" href="/home/stulogin">Login</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/home/register">Registration</a>
@@ -65,15 +57,32 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src=" https://source.unsplash.com/1550x600/?water " alt="First slide">
+       
+         <div class="carousel-item active">
+          <img class="d-block w-100" src="{% static 'home/BH.jpg' %}"  alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src=" https://source.unsplash.com/1550x600/?river" alt="Second slide">
+          <img class="d-block w-100" src="{% static 'home/BC.jpg' %}" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src=" https://source.unsplash.com/1550x600/?summer" alt="Third slide">
+          <img class="d-block w-100" src="{% static 'home/MG1.jpg' %}" alt="Third slide">
         </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'home/d6.jpg' %}" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'home/HG.jpg' %}" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'home/GK.jpg' %}" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'home/Mess.jpg' %}" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'home/MG3.jpg' %}" alt="Third slide">
+        </div>
+        
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -99,7 +108,6 @@
   </nav> -->
 
 
-
   <div class="container-fluid">
 
     <body>
@@ -108,10 +116,14 @@
       </h3>
       Walchand College Of Engineering has a in campus hostel .It spread in about 1.5 acres .It has 2 seperate hostels
       for boys and girls .Boys Hostel has 4 hostel blocks namely D-5 ,D-6 ,D-7 ,D-8 ; providing access for First year ,
-      Second year and Third year students. Boys hostel provides with a built in playground , a mess , a store room , a
+      Second year ,Third year and diploma students. Boys hostel provides with a built in playground , a mess , a store
+      room , a
       tv hall and boiler area (are where hot water is provided) ; moreover each floor has a seperate heater for hot
       water .Each room has two cupboard ,3 set of hangers ,1 tube light ,1 Fan ,4 charging sockets etc . Presently it is
-      a 3 shairing room . Centre of the hostel has a maintained garden . Girls hostel also has 4 blocks namely D-1 ,D-2 ,D-3 ,D-4 
+      a 3 shairing room . Centre of the hostel has a maintained garden . Girls hostel also has 4 blocks namely 
+      D-1 ,D-2 ,D-3 ,D-4 ; providing access for First year ,
+      Second year ,Third year ,Final year and diploma student . Similar facilities are also provided to girls hostel .
+      Students comming from other states accomodate cyber hostel .
     </body>
   </div>
 
@@ -204,16 +216,16 @@
               Useful links
             </h6>
             <p>
-              <a href="#!" class="text-reset">Home</a>
+              <a href="/" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contact Details</a>
+              <a href="/home/contact" class="text-reset">Contact Details</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Registration</a>
+              <a href="/home/register" class="text-reset">Registration</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Student Login</a>
+              <a href="/home/stulogin" class="text-reset">Login</a>
             </p>
           </div>
           <!-- Grid column -->

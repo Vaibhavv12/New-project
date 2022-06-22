@@ -13,10 +13,12 @@ def contact(request):
     return render(request,'home/contact.html')
 
 def register(request):
-    return render(request,'home/register.html')
+    return render(request,'authentication/signup.html')
 
 def stulogin(request):
-    return render(request,'home/stulogin.html')    
+    context  = {'student' : 1}
+    return render(request,'authentication/signin.html',context)    
 
 def admlogin(request):
-    return render(request,'home/admlogin.html')                    
+    context  = {'student' : 0}
+    return render(request,'authenticaion/signin.html',context)                    

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Signup</title>
+
+  <style>
+    .btn {
+      background-color: #f4511e;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+    }
+    
+    .btn:hover {opacity: 1}
+    </style>  
+</head>
+<body>
+
+    {% for message in messages %}
+     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+     <strong>Message:</strong> {{ message }}
+     <button type="button" class="close" data-dismiss="alert" aria-label="close">
+     <span aria-hidden="true">$times;</span>
+     </button>
+     </div>
+ 
+     {% endfor %}
+
+     <h1 style="text-align: center;" >Walchand College of Engineering,Sangli</h1>
+    <h2 style="text-align: center;" >Hostel Login Page</h2>
+    <h3 style="text-align: center;">Sign in here</h3>
+
+    <form action="/auth/signin/" method="post" style="text-align: center;">
+      {% csrf_token %}
+      <label for="">Username</label>
+      <input type="text" id="username" name="username" placeholder="Create a username" Required>
+      <br>
+      <br>
+
+      <label for="">Password</label>
+      <input type="password" id="pass1" name="pass1" placeholder="write your password" Required>
+      <br>
+      <br>
+  
+      <button type="submit" class="btn">Sign in</button>
+</body>
+</html>

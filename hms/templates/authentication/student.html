@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- Adding Js Datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
+
+    <title>Hello Student!</title>
+  </head>
+  <body>
+
+    
+    <div class="container">
+        <div class="row" style="padding: 20px 20px">
+            <div class="col-lg-6">
+                <h2>Welcome    {% if user.is_authenticated%}
+                {{request.user}}
+                    {% endif %} </h2>
+                </div>
+                <div class="col-lg-6">
+                <a href="{% url 'signout' %}" type="button" class="btn btn-danger" style="float: right;" >
+                    logout
+                </a>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <h4>Student Photo</h4>
+
+
+        </div>
+
+        <br>
+
+        <div class="container">
+        <h4>Personal Info</h4>
+         <table class="table table-striped" id="data_table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User ID</th>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>DOB</th>
+                    <th>Presentyear</th>
+                    <th>LastSemScore</th>
+                    <th>Disability</th>
+                    <th>SSC Marks</th>
+                    <th>HSC Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.user_id}}</td>
+                    <td>{{student.user_name}}</td>
+                    <td>{{student.user_address}}</td>
+                    <td>{{student.user_DOB}}</td>
+                    <td>{{student.user_presentyear}}</td>
+                    <td>{{student.user_LastSemScore}}</td>
+                    <td>{{student.user_disability}}</td>
+                    <td>{{student.user_sscmarks}}</td>
+                    <td>{{student.user_hscmarks}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+
+        <h4>Documents Uploaded</h4>
+        <table class="table table-striped" id="data_table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>SSC Marklist</th>
+                    <th>HSC Marklist</th>
+                    <th>Last SEM Result</th>
+                    <th>Collge Admission Letter</th>
+                    <th>Application Form</th>
+                    <th>Fee Receipt</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                {% comment %} <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.user_id}}</td>
+                    <td>{{student.user_name}}</td>
+                    <td>{{student.user_DOB}}</td>
+                    <td>{{student.user_presentyear}}</td>
+                    <td>{{student.user_LastSemScore}}</td>
+                </tr> {% endcomment %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+
+    <h6>Request for allotment</h6>  
+    {% for student in students %}
+    {% if student.user_is_requested == 0 %}
+    <div class="contanier" >
+        <button type="button" class="btn btn-warning"><a  href="/auth/info"  >Request for Hostel</a></button>
+    </div>
+      {% else %} 
+      <p style="color:green">Hostel allotment under process</p>
+      {% endif %} 
+      {% endfor %}
+    </div>
+
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#data_table').DataTable();
+            });
+        </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
