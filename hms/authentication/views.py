@@ -100,7 +100,7 @@ def signup(request):
         studentinfo.save()
 
 
-        messages.success(request, "Your account has been successfully created. We have sent you a confirmation error please confirm your account")
+        messages.success(request, "Your account has been successfully created. We have sent you a confirmation message please confirm your account")
 
 
          #welcome email

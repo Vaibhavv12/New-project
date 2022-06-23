@@ -64,7 +64,9 @@
                     <td>{{student.user_name}}</td>
                     <td>{{student.user_address}}</td>
                     <td>{{student.user_DOB}}</td>
-                    <td>{{student.}}</td>
+                    <td>  <a href="" type="button" class="btn btn-success">
+                        <i class="fas fa-edit"></i>take action
+                        </a></td>
                     <td>  <a href="" type="button" class="btn btn-danger">
                         <i class="fas fa-edit"></i>view
                         </a></td>
@@ -88,7 +90,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for student in students %}
+                {% comment %} {% for student in students %}
                 <tr>
                     <td>{{student.id}}</td>
                     <td>{{student.user_id}}</td>
@@ -97,7 +99,7 @@
                     <td>{{student.user_presentyear}}</td>
                     <td>{{student.user_LastSemScore}}</td>
                 </tr>
-                {% endfor %}
+                {% endfor %} {% endcomment %}
             </tbody>
         </table>
         <br>
